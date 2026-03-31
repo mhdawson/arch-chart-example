@@ -1,0 +1,20 @@
+llm-service:
+  device: gpu
+  secret:
+    enabled: true
+    hf_token: ""  # set via --set llm-service.secret.hf_token=$HF_TOKEN
+  models:
+    llama-3-2-3b-instruct:
+      enabled: true
+      tolerations:
+        - key: g5-gpu
+          value: "true"
+          effect: NoSchedule
+          operator: Equal
+
+llama-stack:
+  pgvector:
+    enabled: false
+  models:
+    llama-3-2-3b-instruct:
+      enabled: true

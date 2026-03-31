@@ -1,0 +1,14 @@
+apiVersion: v2
+name: arch-chart-example
+description: Deploys llama-stack and llm-service to serve Llama 3.2 3B on OpenShift
+type: application
+version: 0.1.0
+appVersion: "0.1.0"
+
+dependencies:
+  - name: llm-service
+    version: "0.5.9"
+    repository: https://rh-ai-quickstart.github.io/ai-architecture-charts
+  - name: llama-stack
+    version: "0.7.3"
+    repository: https://rh-ai-quickstart.github.io/ai-architecture-charts
